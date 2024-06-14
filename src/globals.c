@@ -2,7 +2,7 @@
 
 //The domain size
 const unsigned int scale = 1;
-const unsigned int NX = 32*scale;
+const unsigned int NX = 128*scale;
 const unsigned int NY = NX;
 //The number of directions in the lattice
 const unsigned int ndir = 9;
