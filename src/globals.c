@@ -4,6 +4,7 @@
 const unsigned int scale = 1;
 const unsigned int NX = 128*scale;
 const unsigned int NY = NX;
+const unsigned int DIM = NX*NY;
 //The number of directions in the lattice
 const unsigned int ndir = 9;
 //The memory size (in bytes) for the populations and scalar values

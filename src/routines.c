@@ -3,11 +3,11 @@
 
 #include "globals.h"
 
-inline size_t scalar_index(const unsigned int x, const unsigned int y){
+size_t scalar_index(const unsigned int x, const unsigned int y){
     return NX*y+x;
 }
 
-inline size_t field_index(const unsigned int x, const unsigned int y, const unsigned int d){
+size_t field_index(const unsigned int x, const unsigned int y, const unsigned int d){
     return NX*(NY*d+y)+x;
 }
 

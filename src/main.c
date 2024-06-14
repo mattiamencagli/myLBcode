@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <hdf5.h>
+#include <hdf5_hl.h>
 
-#include "globals.h"
 #include "routines.h"
+#include "h5.h"
+#include "globals.h"
 
 int main(int argc, char **argv){
 
@@ -23,6 +25,8 @@ int main(int argc, char **argv){
     // initialise f1 as equilibrium for rho, ux, uy
     init_equilibrium(f1,rho,ux,uy);
 
+    write(f1, f2, rho, ux, uy, -1);
+
     // main simulation loop; take NSTEPS time steps
     for(unsigned int n = 0; n < NSTEPS; ++n)    {
         // stream from f1 storing to f2
@@ -35,6 +39,10 @@ int main(int argc, char **argv){
         double *temp = f1;
         f1 = f2;
         f2 = temp;
+
+        if(n%50==0)
+            write(f1, f2, rho, ux, uy, n);
+
     }
 
     // deallocate memory

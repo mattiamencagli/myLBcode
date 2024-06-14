@@ -5,6 +5,7 @@
 extern const unsigned int scale;
 extern const unsigned int NX;
 extern const unsigned int NY;
+extern const unsigned int DIM;
 //The number of directions in the lattice
 extern const unsigned int ndir;
 //The memory size (in bytes) for the populations and scalar values
