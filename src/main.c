@@ -25,7 +25,7 @@ int main(int argc, char **argv){
     // initialise f1 as equilibrium for rho, ux, uy
     init_equilibrium(f1,rho,ux,uy);
 
-    write(f1, f2, rho, ux, uy, -1);
+    //write(f1, f2, rho, ux, uy, -1);
 
     // main simulation loop; take NSTEPS time steps
     for(unsigned int n = 0; n < NSTEPS; ++n)    {
@@ -40,8 +40,10 @@ int main(int argc, char **argv){
         f1 = f2;
         f2 = temp;
 
-        if(n%50==0)
+        if( n%50==0 ){
             write(f1, f2, rho, ux, uy, n);
+            printf("Step %d WRITTEN!\n", n);
+        }
 
     }
 

@@ -2,14 +2,15 @@
 
 //The domain size
 const unsigned int scale = 1;
-const unsigned int NX = 128*scale;
+const unsigned int NX = 16*scale;
 const unsigned int NY = NX;
 const unsigned int DIM = NX*NY;
 //The number of directions in the lattice
 const unsigned int ndir = 9;
 //The memory size (in bytes) for the populations and scalar values
-const size_t mem_size_ndir = sizeof(double)*NX*NY*ndir;
-const size_t mem_size_scalar = sizeof(double)*NX*NY;
+const unsigned int DIMf = NX*NY*ndir;
+const size_t mem_size_ndir = sizeof(double)*DIMf;
+const size_t mem_size_scalar = sizeof(double)*DIM;
 //The lattice weights
 const double w0 = 4.0/9.0; // zero weight
 const double ws = 1.0/9.0; // adjacent weight
@@ -26,4 +27,4 @@ const double u_max = 0.04/scale;
 //The fluid density
 const double rho0 = 1.0;
 //The number of time steps in the simulation
-const unsigned int NSTEPS = 200*scale*scale;
+const unsigned int NSTEPS = 201*scale*scale;

@@ -1,2 +1,4 @@
 *.o
 *.x
+*.h5
+.ipynb_checkpoints/

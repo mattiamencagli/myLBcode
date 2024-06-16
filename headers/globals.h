@@ -9,6 +9,7 @@ extern const unsigned int DIM;
 //The number of directions in the lattice
 extern const unsigned int ndir;
 //The memory size (in bytes) for the populations and scalar values
+extern const unsigned int DIMf;
 extern const size_t mem_size_ndir;
 extern const size_t mem_size_scalar;
 //The lattice weights
