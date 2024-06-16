@@ -2,7 +2,7 @@
 
 //The domain size
 const unsigned int scale = 1;
-const unsigned int NX = 16*scale;
+const unsigned int NX = 128*scale;
 const unsigned int NY = NX;
 const unsigned int DIM = NX*NY;
 //The number of directions in the lattice
@@ -28,3 +28,4 @@ const double u_max = 0.04/scale;
 const double rho0 = 1.0;
 //The number of time steps in the simulation
 const unsigned int NSTEPS = 201*scale*scale;
+const unsigned int out = 20*scale*scale;

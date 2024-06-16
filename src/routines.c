@@ -1,6 +1,9 @@
 #include <math.h>
 #include <stddef.h>
 
+#include <time.h>
+#include <stdlib.h>
+
 #include "globals.h"
 
 size_t scalar_index(const unsigned int x, const unsigned int y){
@@ -32,6 +35,13 @@ void taylor_green(unsigned int t, double *r, double *u, double *v){
             size_t sidx = scalar_index(x,y);
             taylor_green_pointcomp(t,x,y,&r[sidx],&u[sidx],&v[sidx]);
         }
+    srand(time(NULL));
+    r[scalar_index(rand()%128, rand()%128)] = 5;
+    r[scalar_index(rand()%128, rand()%128)] = 6;
+    r[scalar_index(rand()%128, rand()%128)] = 7;
+    r[scalar_index(rand()%128, rand()%128)] = 8;
+    r[scalar_index(rand()%128, rand()%128)] = 9;
+    r[scalar_index(rand()%128, rand()%128)] = 10;
 }
 
 void init_equilibrium(double *f, double *r, double *u, double *v){

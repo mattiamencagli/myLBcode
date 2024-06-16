@@ -29,5 +29,6 @@ extern const double u_max;
 extern const double rho0;
 //The number of time steps in the simulation
 extern const unsigned int NSTEPS;
+extern const unsigned int out;
 
 #endif
