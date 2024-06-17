@@ -28,7 +28,7 @@ int main(int argc, char **argv){
     //write(rho, ux, uy, -1);
 
     // main simulation loop; take NSTEPS time steps
-    for(unsigned int n = 0; n < NSTEPS; ++n)    {
+    for(unsigned int n = 0; n < NSTEPS; ++n) {
         // stream from f1 storing to f2
         stream(f1,f2);
         // calculate post-streaming density and velocity

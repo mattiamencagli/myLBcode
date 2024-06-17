@@ -29,19 +29,34 @@ void taylor_green_pointcomp(unsigned int t, unsigned int x, unsigned int y, doub
     *v = uy;
 }
 
+void sin_init(unsigned int t, unsigned int x, unsigned int y, double *r, double *u, double *v){
+    double kx = 2.0*M_PI/NX;
+    double ky = 8.0*M_PI/NY;
+    double td = 1.0/(nu*(kx*kx+ky*ky));
+    double X = x+0.5;
+    double Y = y+0.5;
+    double ux = u_max*sin(ky*Y);
+    double uy = 0;
+    double rho = 1;
+    *r = rho;
+    *u = ux;
+    *v = uy;
+}
+
 void taylor_green(unsigned int t, double *r, double *u, double *v){
     for(unsigned int y = 0; y < NY; ++y)
         for(unsigned int x = 0; x < NX; ++x){
             size_t sidx = scalar_index(x,y);
-            taylor_green_pointcomp(t,x,y,&r[sidx],&u[sidx],&v[sidx]);
+            sin_init(t,x,y,&r[sidx],&u[sidx],&v[sidx]);
         }
     srand(time(NULL));
-    r[scalar_index(rand()%128, rand()%128)] = 5;
+    /*r[scalar_index(rand()%128, rand()%128)] = 5;
     r[scalar_index(rand()%128, rand()%128)] = 6;
     r[scalar_index(rand()%128, rand()%128)] = 7;
     r[scalar_index(rand()%128, rand()%128)] = 8;
     r[scalar_index(rand()%128, rand()%128)] = 9;
     r[scalar_index(rand()%128, rand()%128)] = 10;
+    */
 }
 
 void init_equilibrium(double *f, double *r, double *u, double *v){
