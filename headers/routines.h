@@ -7,7 +7,9 @@ inline size_t field_index(const unsigned int x, const unsigned int y, const unsi
 
 void taylor_green_pointcomp(unsigned int t, unsigned int x, unsigned int y, double *r, double *u, double *v);
 
-void taylor_green(unsigned int t, double *r, double *u, double *v);
+void sin_init(unsigned int t, unsigned int x, unsigned int y, double *r, double *u, double *v, const double K_fac);
+
+void taylor_green(unsigned int t, double *r, double *u, double *v, const double K_fac);
 
 void init_equilibrium(double *f, double *r, double *u, double *v);
 

@@ -9,6 +9,18 @@
 
 int main(int argc, char **argv){
 
+    //My
+    unsigned int lambda = 128;
+    if(argc > 1){
+        lambda = atoi(argv[1]);
+        if(lambda>NX || lambda%2!=0){
+            printf("lambda deve essere minore di 128 e multiplo di 2\n");
+            exit(1);
+        }
+    }
+    const double K_fac = 256/lambda;
+    printf("lambda=%d, K_fac=%f\n",lambda, K_fac);
+
     //vedi The lattice Boltzmann Method, pag.~560
 
     // allocate memory
@@ -20,7 +32,7 @@ int main(int argc, char **argv){
 
     // compute Taylor-Green flow at t=0
     // to initialise rho, ux, uy fields.
-    taylor_green(0,rho,ux,uy);
+    taylor_green(0,rho,ux,uy,K_fac);
 
     // initialise f1 as equilibrium for rho, ux, uy
     init_equilibrium(f1,rho,ux,uy);
@@ -40,10 +52,8 @@ int main(int argc, char **argv){
         f1 = f2;
         f2 = temp;
 
-        if( n%out==0 ){
-            write_ASCII(rho, ux, uy, n);
-            printf("Step %d WRITTEN!\n", n);
-        }
+        if( n%out==0 )
+            write_ASCII(rho, ux, uy, n, lambda);
 
     }
 

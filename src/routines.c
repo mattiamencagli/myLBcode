@@ -29,9 +29,9 @@ void taylor_green_pointcomp(unsigned int t, unsigned int x, unsigned int y, doub
     *v = uy;
 }
 
-void sin_init(unsigned int t, unsigned int x, unsigned int y, double *r, double *u, double *v){
+void sin_init(unsigned int t, unsigned int x, unsigned int y, double *r, double *u, double *v, const double K_fac){
     double kx = 2.0*M_PI/NX;
-    double ky = 2.0*M_PI/NY;
+    double ky = K_fac*M_PI/NY;
     double td = 1.0/(nu*(kx*kx+ky*ky));
     double X = x+0.5;
     double Y = y+0.5;
@@ -43,13 +43,13 @@ void sin_init(unsigned int t, unsigned int x, unsigned int y, double *r, double 
     *v = uy;
 }
 
-void taylor_green(unsigned int t, double *r, double *u, double *v){
+void taylor_green(unsigned int t, double *r, double *u, double *v, const double K_fac){
     for(unsigned int y = 0; y < NY; ++y)
         for(unsigned int x = 0; x < NX; ++x){
             size_t sidx = scalar_index(x,y);
-            sin_init(t,x,y,&r[sidx],&u[sidx],&v[sidx]);
+            sin_init(t,x,y,&r[sidx],&u[sidx],&v[sidx], K_fac);
         }
-    srand(time(NULL));
+    //srand(time(NULL));
     /*r[scalar_index(rand()%128, rand()%128)] = 5;
     r[scalar_index(rand()%128, rand()%128)] = 6;
     r[scalar_index(rand()%128, rand()%128)] = 7;
