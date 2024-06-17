@@ -4,7 +4,7 @@
 #include <hdf5_hl.h>
 
 #include "routines.h"
-#include "h5.h"
+#include "io.h"
 #include "globals.h"
 
 int main(int argc, char **argv){
@@ -41,7 +41,7 @@ int main(int argc, char **argv){
         f2 = temp;
 
         if( n%out==0 ){
-            write(rho, ux, uy, n);
+            write_ASCII(rho, ux, uy, n);
             printf("Step %d WRITTEN!\n", n);
         }
 

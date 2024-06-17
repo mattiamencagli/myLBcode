@@ -23,7 +23,7 @@ const int diry[] = {0,0,1, 0,-1,1, 1,-1,-1};
 const double nu = 1.0/6.0;
 const double tau = 3.0*nu+0.5;
 //The maximum flow speed
-const double u_max = 0.1/scale;
+const double u_max = 0.04/scale;
 //The fluid density
 const double rho0 = 1.0;
 //The number of time steps in the simulation
