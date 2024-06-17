@@ -31,7 +31,7 @@ void taylor_green_pointcomp(unsigned int t, unsigned int x, unsigned int y, doub
 
 void sin_init(unsigned int t, unsigned int x, unsigned int y, double *r, double *u, double *v){
     double kx = 2.0*M_PI/NX;
-    double ky = 8.0*M_PI/NY;
+    double ky = 2.0*M_PI/NY;
     double td = 1.0/(nu*(kx*kx+ky*ky));
     double X = x+0.5;
     double Y = y+0.5;

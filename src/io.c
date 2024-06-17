@@ -31,7 +31,7 @@ void write_ASCII(const double *rho, const double *ux, const double *uy, const in
     FILE *file = fopen(name, "w");
     for (int i = 0; i < NX; ++i) {
         for (int j = 0; j < NY; ++j)
-            fprintf(file, "%f ", ux[scalar_index(i,j)]);
+            fprintf(file, "%g ", ux[scalar_index(i,j)]);
         fprintf(file, "\n");
     }
     fclose(file);
@@ -40,7 +40,7 @@ void write_ASCII(const double *rho, const double *ux, const double *uy, const in
     file = fopen(name, "w");
     for (int i = 0; i < NX; ++i) {
         for (int j = 0; j < NY; ++j)
-            fprintf(file, "%f ", uy[scalar_index(i,j)]);
+            fprintf(file, "%g ", uy[scalar_index(i,j)]);
         fprintf(file, "\n");
     }
     fclose(file);
@@ -49,7 +49,7 @@ void write_ASCII(const double *rho, const double *ux, const double *uy, const in
     file = fopen(name, "w");
     for (int i = 0; i < NX; ++i) {
         for (int j = 0; j < NY; ++j)
-            fprintf(file, "%f ", rho[scalar_index(i,j)]);
+            fprintf(file, "%g ", rho[scalar_index(i,j)]);
         fprintf(file, "\n");
     }
     fclose(file);
