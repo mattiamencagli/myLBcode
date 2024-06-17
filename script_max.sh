@@ -2,7 +2,12 @@
 
 rm maxs.dat
 
-for i in {0..20000..400}
+for i in {0..5000..10}
 do
-	head -n 1 ux${i}.dat | rs -T | awk -v t=$i 'BEGIN{max=0}{if($1>max) max=$1}END{print t, max} ' >> maxs.dat
+	echo -n "$i " >> maxs.dat 
+	for dir in 128 64 32 16 8 4 2
+	do
+		head -n 1 ./lambda${dir}/ux${i}.dat | rs -T | awk 'BEGIN{max=0}{if($1>max) max=$1}END{printf "%g ",max}' >> maxs.dat
+	done
+	echo " " >> maxs.dat
 done
