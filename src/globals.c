@@ -27,5 +27,5 @@ const double u_max = 0.04/scale;
 //The fluid density
 const double rho0 = 1.0;
 //The number of time steps in the simulation
-const unsigned int NSTEPS = 5001*scale*scale;
-const unsigned int out = 10*scale*scale;
+const unsigned int NSTEPS = 20001*scale*scale;
+const unsigned int out = 100*scale*scale;

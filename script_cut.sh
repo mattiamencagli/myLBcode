@@ -1,15 +1,15 @@
 #!/bin/bash
 
-cut=8
-rm ux_cut_${cut}.dat
+cut=32
+rm output/ux_cut_${cut}.dat
 
 
 cutp="${cut}p"
 
-for i in {0..20000..400}
+for i in {0..20000..100}
 do
-	echo "ux${i}.dat"
-	sed -n $cutp ux${i}.dat >> ux_cut_${cut}.dat
+	echo "./output/ux${i}.dat"
+	sed -n $cutp output/ux${i}.dat >> output/ux_cut_${cut}.dat
 done
 
 #con gnuplot, stampa i sin: p 'ux_cut_8.dat' matrix with linespoint

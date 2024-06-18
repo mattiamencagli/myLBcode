@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv){
 
-    //My
+    //My input
     unsigned int lambda = 128;
     if(argc > 1){
         lambda = atoi(argv[1]);
@@ -32,7 +32,7 @@ int main(int argc, char **argv){
 
     // compute Taylor-Green flow at t=0
     // to initialise rho, ux, uy fields.
-    taylor_green(0,rho,ux,uy,K_fac);
+    init_fields(0,rho,ux,uy,K_fac);
 
     // initialise f1 as equilibrium for rho, ux, uy
     init_equilibrium(f1,rho,ux,uy);

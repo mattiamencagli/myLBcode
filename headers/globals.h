@@ -1,6 +1,9 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
+//MACROS
+#define EXT_FORCE
+
 //The domain size
 extern const unsigned int scale;
 extern const unsigned int NX;

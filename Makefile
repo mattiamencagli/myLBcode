@@ -12,4 +12,7 @@ LB.x: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 clean:
-	rm *.x src/*.o *.h5 *.dat
+	rm *.x src/*.o *.h5
+
+clean_out:
+	rm output/*
