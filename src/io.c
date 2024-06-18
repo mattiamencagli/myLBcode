@@ -35,8 +35,8 @@ void write_ASCII(const double *rho, const double *ux, const double *uy, const in
     strcpy(dirname, dir);
     strcat(dirname, name);
     FILE *file = fopen(dirname, "w");
-    for (int i = 0; i < NX; ++i) {
-        for (int j = 0; j < NY; ++j)
+    for (int j = 0; j < NY; ++j){
+        for (int i = 0; i < NX; ++i)
             fprintf(file, "%g ", ux[scalar_index(i,j)]);
         fprintf(file, "\n");
     }
@@ -47,8 +47,8 @@ void write_ASCII(const double *rho, const double *ux, const double *uy, const in
     strcpy(dirname, dir);
     strcat(dirname, name);
     file = fopen(dirname, "w");
-    for (int i = 0; i < NX; ++i) {
-        for (int j = 0; j < NY; ++j)
+    for (int j = 0; j < NY; ++j){
+        for (int i = 0; i < NX; ++i)
             fprintf(file, "%g ", uy[scalar_index(i,j)]);
         fprintf(file, "\n");
     }
@@ -59,8 +59,8 @@ void write_ASCII(const double *rho, const double *ux, const double *uy, const in
     strcpy(dirname, dir);
     strcat(dirname, name);
     file = fopen(dirname, "w");
-    for (int i = 0; i < NX; ++i) {
-        for (int j = 0; j < NY; ++j)
+    for (int j = 0; j < NY; ++j){
+        for (int i = 0; i < NX; ++i)
             fprintf(file, "%g ", rho[scalar_index(i,j)]);
         fprintf(file, "\n");
     }

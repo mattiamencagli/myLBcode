@@ -55,7 +55,7 @@ void init_fields(unsigned int t, double *r, double *vx, double *vy, const double
     for(unsigned int y = 0; y < NY; ++y){
         for(unsigned int x = 0; x < NX; ++x){
             size_t sidx = scalar_index(x,y);
-            //sin_init(x,y,&r[sidx],&u[sidx],&v[sidx], K_fac);
+            //sin_init(x,y,&r[sidx],&vx[sidx],&vy[sidx], K_fac);
             static_init(&r[sidx],&vx[sidx],&vy[sidx]);
         }
     }
@@ -93,7 +93,7 @@ void stream(double *f_src, double* f_dst){
 void compute_external_force(const unsigned int x, const unsigned int y, double *Fx, double *Fy){
     double ky = 2.0*M_PI/NY;
     double Y = y+0.5;
-    *Fx = 1000*sin(ky*Y);
+    *Fx = u_max*sin(ky*Y);
     *Fy = 0;
 }
 

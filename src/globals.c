@@ -28,4 +28,4 @@ const double u_max = 0.04/scale;
 const double rho0 = 1.0;
 //The number of time steps in the simulation
 const unsigned int NSTEPS = 20001*scale*scale;
-const unsigned int out = 100*scale*scale;
+const unsigned int out = 200*scale*scale;
