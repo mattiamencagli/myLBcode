@@ -28,9 +28,9 @@ void write_h5(const double *rho, const double *ux, const double *uy, const int t
 void write_ASCII(const double *rho, const double *ux, const double *uy, const int t, const int lambda){
 
     char name[20];
-    char dir[15] = "./output";
-    char dirname[36];
-    //snprintf(dir, 15, "./lambda%d", lambda);
+    char dir[40];// = "./output";
+    char dirname[61];
+    snprintf(dir, 40, "./lambdas_tau0_505/lambda%d", lambda);
 
     snprintf(name, 20, "/ux%d.dat", t);
     strcpy(dirname, dir);

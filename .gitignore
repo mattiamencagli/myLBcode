@@ -3,6 +3,7 @@
 *.h5
 *.dat
 *.log
+forzante*
 lambda*/
 output/
 .ipynb_checkpoints/

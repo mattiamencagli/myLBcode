@@ -20,12 +20,12 @@ const double wi[] = {w0,ws,ws,ws,ws,wd,wd,wd,wd};
 const int dirx[] = {0,1,0,-1, 0,1,-1,-1, 1};
 const int diry[] = {0,0,1, 0,-1,1, 1,-1,-1};
 //The kinematic viscosity and the corresponding relaxation parameter
-const double nu = 1.0/6.0;
+const double nu = 0.005/3.0; //tau=0.505; //1.0/6.0; //tau=1
 const double tau = 3.0*nu+0.5;
 //The maximum flow speed
 const double u_max = 0.04/scale;
 //The fluid density
 const double rho0 = 1.0;
 //The number of time steps in the simulation
-const unsigned int NSTEPS = 20001*scale*scale;
-const unsigned int out = 200*scale*scale;
+const unsigned int NSTEPS = 5001*scale*scale;
+const unsigned int out = 10*scale*scale;

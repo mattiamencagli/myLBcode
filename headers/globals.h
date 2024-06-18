@@ -2,7 +2,7 @@
 #define GLOBALS_H
 
 //MACROS
-#define EXT_FORCE
+//#define EXT_FORCE
 
 //The domain size
 extern const unsigned int scale;

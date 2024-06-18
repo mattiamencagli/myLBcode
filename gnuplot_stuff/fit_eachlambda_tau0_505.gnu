@@ -135,8 +135,8 @@ set xlabel ""
 set xlabel  font "" textcolor lt -1 norotate
 set x2label "" 
 set x2label  font "" textcolor lt -1 norotate
-set xrange [ * : * ] noreverse writeback
-set x2range [ * : * ] noreverse writeback
+set xrange [ 0.00000 : 5000.00 ] noreverse writeback
+set x2range [ 0.00000 : 5000.00 ] noreverse writeback
 set ylabel "" 
 set ylabel  font "" textcolor lt -1 rotate
 set y2label "" 
@@ -186,39 +186,39 @@ GNUTERM = "qt"
 I = {0.0, 1.0}
 VoxelDistance = 0.0
 GridDistance = 0.0
-a2 = 0.0399719001175552
-b2 = 0.166676510523102
+a2 = 0.0399796688848978
+b2 = 0.00166681253189183
 PI = 3.1415
-a3 = 0.0398876992484999
-b3 = 0.166676472721311
-a4 = 0.0395524298781942
-b4 = 0.166676022831764
-a5 = 0.0382359834624659
-b5 = 0.166669125786665
-a6 = 0.0333472036097648
-b6 = 0.166552008447342
-a7 = 0.0188562
-b7 = 0.164338556274009
+a3 = 0.0399188733505405
+b3 = 0.00166795439199186
+a4 = 0.039675945464567
+b4 = 0.0016720030488858
+a5 = 0.0387070084228886
+b5 = 0.00168804544245245
+a6 = 0.0346769551437054
+b6 = 0.00174218230286863
+a7 = 0.0181515022791069
+b7 = 0.00178991460097704
 FIT_CONVERGED = 1
-FIT_NDF = 0
-FIT_STDFIT = 0 #inf.0
-FIT_WSSR = 2.93873587705572e-39
-FIT_P = 0 #NaN
-FIT_NITER = 9
-a2_err = 3.32230286478286e-09
-b2_err = 2.22583946514721e-08
+FIT_NDF = 499
+FIT_STDFIT = 0.00019857752938922
+FIT_WSSR = 1.9677084553985e-05
+FIT_P = 1.0
+FIT_NITER = 5
+a2_err = 4.45545632367653e-08
+b2_err = 1.60957216887804e-07
 FIT_ERROR = 0
-a3_err = 3.14444685218322e-09
-b3_err = 1.87457269154885e-08
-a4_err = 8.99183723708247e-09
-b4_err = 5.72959066208463e-08
-a5_err = 1.70402477441286e-08
-b5_err = 1.22873865972611e-07
-a6_err = 2.11354426290404e-08
-b6_err = 2.387298318611e-07
-a7_err = 2e-6 #inf.0
-b7_err = 2e-6 #inf.0
+a3_err = 1.72722603933117e-07
+b3_err = 1.58658938085952e-07
+a4_err = 7.28546969180746e-07
+b4_err = 1.79647995198191e-07
+a5_err = 4.16140776863148e-06
+b5_err = 3.56050896831484e-07
+a6_err = 1.96578566695242e-05
+b6_err = 1.40628996455489e-06
+a7_err = 7.99255448674645e-05
+b7_err = 1.14015791974118e-05
 ## Last datafile plotted: "maxs.dat"
 p 'maxs.dat' u 1:2, 'maxs.dat' u 1:3, 'maxs.dat' u 1:4, 'maxs.dat' u 1:5, 'maxs.dat' u 1:6, 'maxs.dat' u 1:7, f2(x), f3(x), f4(x), f5(x), f6(x), f7(x)
-## Last fit command: "fit [0:10] f7(x) 'maxs.dat' u 1:7 via a7,b7"
+## Last fit command: "fit f7(x) 'maxs.dat' u 1:7 via a7,b7"
 #    EOF
