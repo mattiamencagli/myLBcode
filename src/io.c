@@ -16,6 +16,7 @@ void write_h5(const double *rho, const double *ux, const double *uy, const int t
 
     H5LTset_attribute_int(file, "/", "NX", &NX, 1);
     H5LTset_attribute_int(file, "/", "NY", &NY, 1);
+    H5LTset_attribute_int(file, "/", "t", &t, 1);
     H5LTmake_dataset(file, "/rho", 2, dim, H5T_NATIVE_DOUBLE, rho);
     H5LTmake_dataset(file, "/ux", 2, dim, H5T_NATIVE_DOUBLE, ux);
     H5LTmake_dataset(file, "/uy", 2, dim, H5T_NATIVE_DOUBLE, uy);
