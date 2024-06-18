@@ -2,5 +2,6 @@
 *.x
 *.h5
 *.dat
+*.log
 lambda*/
 .ipynb_checkpoints/
